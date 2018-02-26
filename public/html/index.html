@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script type="text/javascript" src="../js/footer.js"> </script>
 </head>
 
-<body onload="getStoreItems('item_container'); loadFooter('thefoot'); printCartQuant();">
+<body onload="getStoreItems('item_container'); loadFooter('thefoot');">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNDTP2T"
@@ -104,7 +104,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</div>
 						<div id="cart_container" class="cart box_1">
 								<a href="../html/checkout.html">
-								<h3> <span id="cart_total" class="simpleCart_total"></span> <img src="../images/bag.png" alt=""></h3>
+								<h3> <div id="cart_total"></div> <img src="../images/bag.png" alt=""></h3>
 								</a>	
 								<p><a href="javascript:;" onclick="clearCart()" class="simpleCart_empty">(empty cart)</a></p>
 								<div class="clearfix"> </div>
@@ -215,7 +215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
     paypal.minicart.render();
     paypal.minicart.view.toggle();
-
+    printCartQuant();
 </script>
 
 </body>
