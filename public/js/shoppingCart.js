@@ -4,21 +4,18 @@ function printCartQuant(cart_total) {
 
     var html_string = "";
     html_string = "$" + paypal.minicart.cart.total() + ".00";
-    console.log("Current cart amount: " + html_string);
 
     var container_box; 
     container_box = document.getElementById(cart_total);
-    container_box.insertAdjacentHTML('afterbegin',html_string);
 
-/*
-var parent = document.createElement("div");
-var child = document.createElement("p");
-parent.appendChild(child);
-var span = document.createElement("span");
+    var newTotalElement = document.createElement("div");
+    var child = document.createTextNode(html_string);
+    newTotalElement.appendChild(child);
+    newTotalElement.setAttribute("id", "cart_total");
 
-child.replaceWith(span);
-*/
-
+    if (container_box != null){
+        container_box.replaceWith(newTotalElement);
+    }
 }
 
 function addToCart() {
