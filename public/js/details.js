@@ -20,8 +20,8 @@ function printItem (detail_container, data) {
     console.log("printing item");
 
     const paypal_button1half = ' \
-    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post"> \
-    <input type="hidden" name="cmd" value="_s-xclick"> \
+    <form onclick="addToCart()" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post"> \
+    <input type="hidden" name="cmd" value="_cart"> \
     <input type="hidden" name="hosted_button_id" value="';
     const paypal_button2half = ' "> \
     <table> \
@@ -96,10 +96,9 @@ function printItem (detail_container, data) {
             source_image_width: 900,
             source_image_height: 1200,
             show_hint: true,
-            click_callback: function(image_anchor, instance_id){
-                alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-            }
+            // click_callback: function(image_anchor, instance_id){
+            //     alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+            // }
         });
-
     });
 } // end function

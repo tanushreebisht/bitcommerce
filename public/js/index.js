@@ -19,7 +19,7 @@ function getStoreItems (item_container) {
         contentType: "application/json",
         url: "https://api.mlab.com/api/1/databases/items/collections/tshirts?apiKey=TWDrwzV7Bh-9-oQuxwZDqBsyk-940NX6",
         success: function(data) {
-            console.log("Our data: " + JSON.stringify(data));
+            //console.log("Our data: " + JSON.stringify(data));
             printStoreItems(item_container, data)
         }
     });
@@ -29,7 +29,7 @@ function printStoreItems (item_container, data) {
     console.log("Loaded loadItems.js!");
 
     const paypal_button1half = ' \
-    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post"> \
+    <form onclick="addToCart()" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post"> \
     <input type="hidden" name="cmd" value="_s-xclick"> \
     <input type="hidden" name="hosted_button_id" value="';
     const paypal_button2half = ' "> \
