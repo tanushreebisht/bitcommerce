@@ -30,13 +30,21 @@ function printCartQuant(cart_total) {
 
 function addToCart() {
     paypal.minicart.view.toggle();
-    paypal.minicart.cart.add({ 
-        "business": "user@example.com",
-        "item_name": "Item Name",
-        "amount": 10.00,
-        "currency_code": "USD" 
+
+    $.ajax({
+        method: "GET",
+        contentType: "application/json",
+        url: "https://api.mlab.com/api/1/databases/items/collections/tshirts?apiKey=TWDrwzV7Bh-9-oQuxwZDqBsyk-940NX6",
+        success: function(data) {
+            paypal.minicart.cart.add({
+                "business": "user@example.com",
+                "item_name": data[2].name,      // Hardcoded for item2 -- working
+                "amount": data[2].price,
+                "currency_code": "USD"
+            });
+            printCartQuant("cart_total");
+        }
     });
-    printCartQuant("cart_total");
 }
 
 function clearCart(){
