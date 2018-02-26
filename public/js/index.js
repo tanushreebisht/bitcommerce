@@ -19,7 +19,7 @@ function getStoreItems (item_container) {
         contentType: "application/json",
         url: "https://api.mlab.com/api/1/databases/items/collections/tshirts?apiKey=TWDrwzV7Bh-9-oQuxwZDqBsyk-940NX6",
         success: function(data) {
-            console.log("Our data: " + JSON.stringify(data));
+            //console.log("Our data: " + JSON.stringify(data));
             printStoreItems(item_container, data)
         }
     });

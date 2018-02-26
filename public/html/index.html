@@ -37,9 +37,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <script src="../js/menu_jquery.js"></script>
 <script src="../js/simpleCart.min.js"> </script>
+<script src="../js/paypalCart.js"> </script>
 <script type="text/javascript" src="../js/footer.js"> </script>
 </head>
-<body onload="getStoreItems('item_container'); loadFooter('thefoot');">
+<body onload="getStoreItems('item_container'); loadFooter('thefoot'); getPaypalObject('cart_container')">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNDTP2T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -99,12 +100,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<div class="reg">
 								<a href="../html/register.html">REGISTER</a>
 							</div>
-							<div class="cart box_1">
+							<div id="cart_container">
+                        <!--
 								<a href="../html/checkout.html">
 								<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)<img src="../images/bag.png" alt=""></h3>
 								</a>	
-								<p><a href="javascript:;" class="simpleCart_empty">(empty card)</a></p>
+								<p><a href="javascript:;" class="simpleCart_empty">(empty cart)</a></p>
 								<div class="clearfix"> </div>
+                        -->
 							</div>
 							<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
 								<input type="hidden" name="cmd" value="_s-xclick">
