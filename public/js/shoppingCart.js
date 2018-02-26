@@ -1,3 +1,13 @@
+/*
+window.onload = function() {
+  printCartQuant("cart_total");
+};
+*/
+
+function loadInitialFunctions() {
+    loadFooter('thefoot');
+    printCartQuant('cart_total')
+}
 
 function printCartQuant(cart_total) {
     paypal.minicart.view.toggle();
